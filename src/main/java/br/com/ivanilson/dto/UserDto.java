@@ -1,8 +1,6 @@
 package br.com.ivanilson.dto;
 
-import br.com.ivanilson.enums.StatusUser;
 import lombok.*;
-
 
 @Getter
 @Setter

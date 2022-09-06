@@ -1,7 +1,5 @@
 package br.com.ivanilson.dto;
 
-import br.com.ivanilson.model.Category;
-import br.com.ivanilson.model.Store;
 import lombok.*;
 
 @Getter
@@ -13,7 +11,7 @@ public class PetDto {
 
     private Integer id;
     private String nome;
-    private String status;
+    private Integer status;
     private Integer category;
-    private Integer store;
+    private Integer stores;
 }

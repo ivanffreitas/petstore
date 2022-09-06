@@ -11,10 +11,7 @@ import java.time.LocalDate;
 public class StoreDto {
 
     private Integer id;
-    private LocalDate dataEntrada;
     private LocalDate dataSaida;
-    private String descricao;
-    private String obs;
-    private Integer pets;
-    private Integer status;
+    private Integer quantidade;
+    private Integer pet;
 }

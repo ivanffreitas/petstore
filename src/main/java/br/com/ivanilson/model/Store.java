@@ -1,11 +1,10 @@
 package br.com.ivanilson.model;
 
-import br.com.ivanilson.enums.StatusStore;
+import br.com.ivanilson.enums.StatusPet;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Getter
 @Setter
@@ -21,23 +20,14 @@ public class Store {
     @Column(name = "S_ID")
     private Integer id;
 
-    @Column(name = "S_DATA_ENTRADA")
-    private LocalDate dataEntrada;
-
     @Column(name = "S_DATA_SAIDA")
     private LocalDate dataSaida;
 
-    @Column(name = "S_DESCRICAO")
-    private String descricao;
+    @Column(name = "S_QUANTIDADE")
+    private Integer quantidade;
 
-    @Column(name = "S_OBS")
-    private String obs;
-
-    @OneToMany(mappedBy = "store")
-    private List<Pet> pets;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "S_STATUS")
-    private StatusStore status;
+    @ManyToOne
+    @JoinColumn(name = "P_ID_PET")
+    private Pet pet;
 
 }

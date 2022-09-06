@@ -1,8 +1,10 @@
 package br.com.ivanilson.model;
 
+import br.com.ivanilson.enums.StatusPet;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,15 +23,15 @@ public class Pet {
     @Column(name = "P_NOME")
     private String nome;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "P_STATUS")
-    private String status;
+    private StatusPet status;
 
     @ManyToOne
     @JoinColumn(name = "C_ID_CATEGORIA")
     private Category category;
 
-    @ManyToOne
-    @JoinColumn(name = "S_ID_STORE")
-    private Store store;
+    @OneToMany(mappedBy = "pet")
+    private List<Store> stores;
 
 }
