@@ -1,5 +1,6 @@
 package br.com.ivanilson.model;
 
+import br.com.ivanilson.enums.StatusUser;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "PSTB001_STATUS")
+@Table(name = "PSTB001_USER")
 public class User {
 
     @Id
@@ -28,6 +29,7 @@ public class User {
     private String senha;
 
     @Column(name = "U_STATUS")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusUser status;
 
 }
