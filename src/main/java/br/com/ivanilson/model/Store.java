@@ -1,6 +1,5 @@
 package br.com.ivanilson.model;
 
-import br.com.ivanilson.enums.StatusPet;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,6 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@ToString
 @Table(name = "PSTB002_STORE")
 public class Store {
 
