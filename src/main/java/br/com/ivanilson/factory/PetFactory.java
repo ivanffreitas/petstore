@@ -3,6 +3,7 @@ package br.com.ivanilson.factory;
 import br.com.ivanilson.dto.PetDto;
 import br.com.ivanilson.enums.StatusPet;
 import br.com.ivanilson.model.Pet;
+import br.com.ivanilson.model.Store;
 
 import javax.inject.Singleton;
 import java.util.List;
@@ -17,7 +18,7 @@ public class PetFactory {
                 .nome(dto.getNome())
                 .status(StatusPet.toEnum(dto.getStatus()))
                 //.category(dto.getCategory())
-                //.stores(dto.getStores())
+                //.stores()
                 .build();
     }
 
@@ -32,8 +33,8 @@ public class PetFactory {
                 .id(entidade.getId())
                 .nome(entidade.getNome())
                 .status(entidade.getStatus().getCodigo())
-                //.category(entidade.getCategory())
-                //.stores(entidade.getStores().get(0).getId())
+                .category(entidade.getCategory().getId())
+                .stores(entidade.getStores().get(0).getId())
                 .build();
     }
 

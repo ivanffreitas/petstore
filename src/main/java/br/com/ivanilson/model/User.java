@@ -10,9 +10,11 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "PSTB001_USER")
-public class User {
+public class User  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +30,8 @@ public class User {
     @Column(name = "U_SENHA")
     private String senha;
 
+    //@Enumerated(EnumType.STRING)
     @Column(name = "U_STATUS")
-    @Enumerated(EnumType.STRING)
     private StatusUser status;
 
 }

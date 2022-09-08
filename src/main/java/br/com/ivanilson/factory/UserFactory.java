@@ -1,7 +1,6 @@
 package br.com.ivanilson.factory;
 
 import br.com.ivanilson.dto.UserDto;
-import br.com.ivanilson.enums.StatusUser;
 import br.com.ivanilson.model.User;
 
 import javax.inject.Singleton;
@@ -17,7 +16,7 @@ public class UserFactory {
                 .nome(dto.getNome())
                 .email(dto.getEmail())
                 .senha(dto.getSenha())
-                .status(StatusUser.toEnum(dto.getStatus()))
+                .status(dto.getStatus())
                 .build();
     }
 
@@ -34,12 +33,12 @@ public class UserFactory {
                 .nome(entidade.getNome())
                 .email(entidade.getEmail())
                 .senha(entidade.getSenha())
-                .status(entidade.getStatus().getCodigo())
+                .status(entidade.getStatus())
                 .build();
     }
 
-    public List<UserDto> toListUserDtos(List<User> entidade){
-        return entidade
+    public List<UserDto> toListUserDtos(List<User> entidades){
+        return entidades
                 .stream()
                 .map(this::toUserDto)
                 .collect(Collectors.toList());
