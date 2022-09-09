@@ -30,7 +30,6 @@ public class User  {
     @Column(name = "U_SENHA")
     private String senha;
 
-    //@Enumerated(EnumType.STRING)
     @Column(name = "U_STATUS")
     private StatusUser status;
 

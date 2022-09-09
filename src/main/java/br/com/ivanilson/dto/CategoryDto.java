@@ -11,6 +11,5 @@ public class CategoryDto {
 
     private Integer id;
     private String nome;
-    private Integer pets;
 
 }

@@ -22,6 +22,7 @@ public class CategoryService {
 
     @Inject
     CategoryFactory factory;
+    
 
     public List<CategoryDto> listarCategory(){
         PanacheQuery<Category> query = repository.findAll();

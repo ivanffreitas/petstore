@@ -1,5 +1,6 @@
 package br.com.ivanilson.dto;
 
+import br.com.ivanilson.model.Pet;
 import lombok.*;
 import java.time.LocalDate;
 
@@ -13,5 +14,5 @@ public class StoreDto {
     private Integer id;
     private LocalDate dataSaida;
     private Integer quantidade;
-    private Integer pet;
+    private Pet pet;
 }

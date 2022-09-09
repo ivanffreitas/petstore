@@ -1,6 +1,7 @@
 package br.com.ivanilson.model;
 
 import br.com.ivanilson.enums.StatusPet;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@ToString
 @Table(name = "PSTB004_PET")
 public class Pet {
 
@@ -24,7 +24,6 @@ public class Pet {
     @Column(name = "P_NOME")
     private String nome;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "P_STATUS")
     private StatusPet status;
 
@@ -32,6 +31,7 @@ public class Pet {
     @JoinColumn(name = "C_ID_CATEGORIA")
     private Category category;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "pet")
     private List<Store> stores;
 

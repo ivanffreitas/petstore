@@ -1,5 +1,6 @@
 package br.com.ivanilson.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Category {
     @Column(name = "C_NOME")
     private String nome;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "category")
     private List<Pet> pets;
 }

@@ -1,8 +1,15 @@
 package br.com.ivanilson.factory;
 
+import br.com.ivanilson.dto.CategoryDto;
+import br.com.ivanilson.dto.PetDto;
 import br.com.ivanilson.dto.StoreDto;
+import br.com.ivanilson.model.Category;
+import br.com.ivanilson.model.Pet;
 import br.com.ivanilson.model.Store;
+import br.com.ivanilson.service.CategoryService;
+import br.com.ivanilson.service.PetService;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,12 +17,18 @@ import java.util.stream.Collectors;
 @Singleton
 public class StoreFactory {
 
+    @Inject
+    PetService petService;
+
+    @Inject
+    PetFactory petFactory;
+
     public Store toStore(StoreDto dto){
-        return Store.builder()
+         return Store.builder()
                 .id(dto.getId())
                 .dataSaida(dto.getDataSaida())
                 .quantidade(dto.getQuantidade())
-                //.pet(dto.getPet())
+                .pet(dto.getPet())
                 .build();
     }
 
@@ -27,11 +40,11 @@ public class StoreFactory {
     }
 
     public StoreDto toStoreDto(Store entidade){
-        return StoreDto.builder()
+         return StoreDto.builder()
                 .id(entidade.getId())
                 .dataSaida(entidade.getDataSaida())
                 .quantidade(entidade.getQuantidade())
-                //.pet(entidade.getPet())
+                .pet(entidade.getPet())
                 .build();
     }
 
